@@ -36,11 +36,32 @@ function expect(target) {
 //
 // Only add code to *THIS* section!
 
-// ????????
-// ????????
-// ????????
+var Dog = function(options){
 
+  var opt = options || {};
 
+  this.color = opt.color;
+  this.hungry = (opt.hungry === false) ? false:true;
+  this.status = 'normal';
+  this.owner = opt.owner;
+
+};
+
+var Human = function(arguments){
+
+  var arg = arguments || {};
+
+  this.cool = arg.cool || false;
+  
+  this.pet = function(dog){
+    dog.status = 'happy';
+  };
+
+  this.feed = function(dog){
+    dog.hungry = false;
+  };
+
+};
 //        __
 //   ____/ /___  ____ ______
 //  / __  / __ \/ __ `/ ___/
